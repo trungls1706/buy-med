@@ -1,9 +1,5 @@
 import { Stack } from 'expo-router';
-import 'react-native-reanimated';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import '../global.css';
 
 export default function RootLayout() {
 
