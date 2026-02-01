@@ -9,7 +9,7 @@ export default function Empty({ loading }: any) {
       <Text className="mt-6 text-lg font-medium text-gray-400 text-center">
         {loading
           ? "Finding medications..."
-          : "No medications found.\nTry a different search term."}
+          : "No medications found.\nTry a different search."}
       </Text>
     </View>
   );

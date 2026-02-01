@@ -26,7 +26,6 @@ export default function QuickOrderScreen() {
   const { items: cartItems, updateQuantity, totals } = useCart();
   const [localSearch, setLocalSearch] = useState("");
 
-  // Debounced search logic
   const debouncedSearch = useMemo(
     () =>
       debounce((query: string) => {

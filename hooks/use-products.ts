@@ -8,28 +8,6 @@ export const useProducts = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category>("All");
 
-  useEffect(() => {
-    // Simulate API fetch
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        // In a real app, this would be a fetch call
-        // const response = await fetch('/api/products');
-        // const data = await response.json();
-
-        // Simulating network delay
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        setProducts(productsData as Product[]);
-      } catch (error) {
-        console.error("Failed to fetch products", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
       const matchesSearch = product.name
@@ -49,6 +27,24 @@ export const useProducts = () => {
     "Allergy",
     "Gastro",
   ];
+
+  // ======================================= SIDE EFFECT =======================================
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        setProducts(productsData as Product[]);
+      } catch (error) {
+        console.error("Failed to fetch products", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return {
     products: filteredProducts,
