@@ -10,8 +10,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "pharmacy-green": "#065f46",
+        "pharmacy-green": "#006B3F",
+        "pharmacy-price": "#006B3F",
+        "pharmacy-rx": "#ef4444",
+        "pharmacy-rxLight": "#fee2e2",
       },
+
       fontFamily: {
         quicksand: ["Quicksand_400Regular", "sans-serif"],
       },

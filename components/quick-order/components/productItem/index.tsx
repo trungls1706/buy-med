@@ -29,10 +29,11 @@ const ProductItem = React.memo(
     return (
       <View className="bg-white m-2 mx-4 p-4 rounded-3xl flex-row items-center border border-gray-100 relative">
         {product.isPrescription && (
-          <View className="absolute top-0 right-0 bg-red-500 px-3 py-1 rounded-tr-3xl rounded-bl-2xl">
+          <View className="absolute top-0 right-0 bg-pharmacy-rx px-3 py-1 rounded-tr-3xl rounded-bl-2xl">
             <Text className="text-white text-[10px] font-bold">RX</Text>
           </View>
         )}
+
 
         <View className="w-16 h-16 bg-gray-50 rounded-2xl justify-center items-center">
           <IconSymbol name={getIcon() as any} size={32} color="#006B3F" />

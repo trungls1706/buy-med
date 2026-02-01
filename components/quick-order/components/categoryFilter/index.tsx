@@ -26,21 +26,20 @@ const CategoryFilter = ({
             <TouchableOpacity
               key={category}
               onPress={() => setSelectedCategory(category)}
-              className={`px-6 py-2.5 rounded-full border ${
-                isSelected
-                  ? "bg-pharmacy-green border-pharmacy-green"
-                  : "bg-white border-gray-100"
-              }`}
+              className={`px-6 py-2 rounded-full border ${isSelected
+                ? "bg-pharmacy-green border-pharmacy-green"
+                : "bg-white border-gray-200"
+                }`}
             >
               <Text
-                className={`text-sm font-semibold ${
-                  isSelected ? "text-white" : "text-gray-700"
-                }`}
+                className={`text-sm font-bold ${isSelected ? "text-white" : "text-gray-500"
+                  }`}
               >
                 {category}
               </Text>
             </TouchableOpacity>
           );
+
         })}
       </ScrollView>
     </View>

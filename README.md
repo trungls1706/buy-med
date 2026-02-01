@@ -30,7 +30,7 @@ I have followed a clean architecture approach to separate UI components from sta
 - **`hooks/use-cart.ts`**: Manages cart state including adding/removing items, persistence, and total calculations.
 - **`hooks/cart-utils.ts`**: Pure functions for cart calculations, extracted for easy unit testing.
 - **`components/quick-order/`**: UI-only components (ProductItem, CartSummary, CategoryFilter) designed to be reusable and performant (using `React.memo`).
-- **`app/(tabs)/quick-order.tsx`**: Main screen that orchestrates the hooks and components.
+- **`app/index.tsx`**: Main screen that orchestrates the hooks and components.
 
 ### 🛠️ State Management & Persistence
 
@@ -41,7 +41,7 @@ I have followed a clean architecture approach to separate UI components from sta
 
 ### 🧪 Unit Tests
 
-Implemented unit tests for cart calculation logic in `hooks/__tests__/use-cart.test.ts`.
+Implemented unit tests for cart calculation logic in `hooks/use-cart.test.ts`.
 To run tests:
 
 ```bash
@@ -57,5 +57,3 @@ Given more time, I would:
 3.  **Haptics & Animations**: Add `expo-haptics` for tactile feedback when adding items and `react-native-reanimated` for smoother transitions (e.g., cart summary appearing/disappearing).
 4.  **Offline Support**: Enhance the data layer to handle intermittent connectivity and sync cart data with a remote server.
 5.  **Form Validation**: If the "Quick Order" led to a checkout, I would implement robust form validation using `React Hook Form` and `Zod`.
-
----
