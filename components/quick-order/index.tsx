@@ -13,6 +13,8 @@ import {
   Search,
 } from "./components";
 
+const DEBOUNCE_DELAY = 300;
+
 export default function QuickOrderScreen() {
   const {
     products,
@@ -30,7 +32,7 @@ export default function QuickOrderScreen() {
     () =>
       debounce((query: string) => {
         setSearchQuery(query);
-      }, 300),
+      }, DEBOUNCE_DELAY),
     [setSearchQuery],
   );
 
