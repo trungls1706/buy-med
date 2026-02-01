@@ -2,8 +2,15 @@ import { useCart } from "@/hooks/use-cart";
 import { useProducts } from "@/hooks/use-products";
 import debounce from "lodash.debounce";
 import { useMemo, useState } from "react";
+import { ActivityIndicator, FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { CategoryFilter, Header, Search } from "./components";
+import {
+  CategoryFilter,
+  Empty,
+  Header,
+  ProductItem,
+  Search,
+} from "./components";
 
 export default function QuickOrderScreen() {
   const {
@@ -104,7 +111,25 @@ export default function QuickOrderScreen() {
         setSelectedCategory={setSelectedCategory}
       />
 
-      {/* Categories */}
+      {loading ? (
+        <View className="flex-1 justify-center items-center">
+          <ActivityIndicator size="large" color="#006B3F" />
+        </View>
+      ) : (
+        <FlatList
+          data={products}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <ProductItem
+              product={item}
+              quantity={cartItems[item.id]?.quantity || 0}
+              onUpdateQuantity={updateQuantity}
+            />
+          )}
+          ListEmptyComponent={<Empty />}
+          contentContainerStyle={{ paddingBottom: 20 }}
+        />
+      )}
 
       {/* List */}
       {/* <ScrollView
