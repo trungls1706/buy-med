@@ -1,5 +1,4 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 
 export default function Header() {
   return (
@@ -8,9 +7,9 @@ export default function Header() {
         Pharmacy Search
       </Text>
 
-      <TouchableOpacity className="p-2">
+      {/* <TouchableOpacity className="p-2">
         <MaterialCommunityIcons name="barcode-scan" size={28} color="#065f46" />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 }
