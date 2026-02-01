@@ -27,7 +27,7 @@ const ProductItem = React.memo(
     };
 
     return (
-      <View className="bg-white m-2 mx-4 p-4 rounded-3xl flex-row items-center shadow-sm border border-gray-100">
+      <View className="bg-white m-2 mx-4 p-4 rounded-3xl flex-row items-center border border-gray-100">
         <View className="w-16 h-16 bg-gray-50 rounded-2xl justify-center items-center">
           <IconSymbol name={getIcon() as any} size={32} color="#006B3F" />
         </View>
@@ -55,11 +55,11 @@ const ProductItem = React.memo(
           </Text>
         </View>
 
-        <View className="flex-row items-center bg-gray-50 rounded-full p-1 border border-gray-100">
+        <View className=" flex-row items-center bg-gray-50 rounded-full p-1 border border-gray-100 gap-4">
           <TouchableOpacity
             onPress={() => onUpdateQuantity(product, -1)}
             disabled={quantity === 0}
-            className={`w-7 h-7 rounded-full justify-center items-center ${quantity === 0 ? "opacity-30" : "bg-white shadow-sm"}`}
+            className={`w-7 h-7 rounded-full justify-center items-center ${quantity === 0 ? "opacity-30" : "bg-white "}`}
           >
             <IconSymbol name="minus" size={12} color="#000" />
           </TouchableOpacity>
@@ -69,7 +69,7 @@ const ProductItem = React.memo(
           <TouchableOpacity
             onPress={() => onUpdateQuantity(product, 1)}
             disabled={quantity === 99}
-            className="w-7 h-7 rounded-full bg-pharmacy-green justify-center items-center shadow-sm"
+            className="w-7 h-7 rounded-full bg-pharmacy-green justify-center items-center"
           >
             <IconSymbol name="plus" size={12} color="white" />
           </TouchableOpacity>

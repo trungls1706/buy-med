@@ -13,8 +13,6 @@ const CategoryFilter = ({
   selectedCategory,
   setSelectedCategory,
 }: CategoryFilterProps) => {
-  console.log("selectedCategory", selectedCategory);
-
   return (
     <View className="py-2">
       <ScrollView
@@ -31,7 +29,7 @@ const CategoryFilter = ({
               className={`px-6 py-2.5 rounded-full border ${
                 isSelected
                   ? "bg-pharmacy-green border-pharmacy-green"
-                  : "bg-white border-gray-100 shadow-sm"
+                  : "bg-white border-gray-100"
               }`}
             >
               <Text
