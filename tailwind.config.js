@@ -8,7 +8,14 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "pharmacy-green": "#065f46",
+      },
+      fontFamily: {
+        quicksand: ["Quicksand_400Regular", "sans-serif"],
+      },
+    },
   },
   plugins: [],
-}
+};
